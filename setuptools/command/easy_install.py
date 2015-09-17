@@ -89,7 +89,7 @@ if PY2:
         try:
             unicode(s, 'ascii')
             return True
-        except UnicodeError:
+        except (UnicodeError, TypeError):
             return False
 else:
     def _to_ascii(s):
